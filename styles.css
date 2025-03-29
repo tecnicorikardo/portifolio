@@ -1,0 +1,160 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+   
+
+
+/* Hero Section */
+#hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/background1.png') no-repeat center/cover;
+  color: rgb(255, 255, 255);
+  
+}
+
+.titulo {
+ /* -webkit-text-stroke: 1px black; /* Borda preta de 2px */ 
+  color: rgb(255, 255, 255); /* Cor interna do texto */
+}
+
+.sobre {
+  
+  color: rgb(235, 236, 226);
+  font-size: 24px;
+  font-style: bold;
+  letter-spacing: 3px;
+}
+
+
+
+#video-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 12px 25px;
+  background: #ff6f61;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #ff4d3b;
+}
+
+/* Sobre Mim */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.sobre-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Certificados */
+.cert-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cert-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  overflow: hidden; /* Evita que o conteúdo transborde */
+}
+
+.cert-card img {
+  width: 100%; /* Ajusta a largura para ocupar toda a div */
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 8px;
+  margin-top: 15px; /* Espaçamento entre o título e a imagem */
+  min-height: 200px; /* Define uma altura mínima para as imagens */
+  object-fit: scale-down; /* Garante que a imagem seja reduzida, mas não cortada */
+}
+
+/* Contato */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.icon {
+  font-size: 2rem;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.icon.whatsapp:hover { color: #25D366; }
+.icon.instagram:hover { color: #E1306C; }
+.icon.linkedin:hover { color: #0077B5; }
+.icon.github:hover { color: #333; }
+
+/* Espaçamento entre as seções */
+section {
+  padding: 60px 0;
+}
+
+.meuscertificados {
+  margin-top: -80px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.entreemcontato {
+  margin-top: -100px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.icone {
+  width: 35px;
+  height: 35px;
+}
