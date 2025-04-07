@@ -56,6 +56,8 @@ body {
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
 }
 
 .hero-content p {
