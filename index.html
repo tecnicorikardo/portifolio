@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ricardo Martins Santos - Portfólio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <h1 href="inicio">
+          <!--<span class="text-primary">Ricardo</span-->
+          <!--<span class="text-secondary">Martins</span>-->
+        </h1>
+      </div>
+
+      <!-- Menu para desktop -->
+      <nav class="nav-desktop">
+        <a href="#inicio" class="nav-link">Início</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#experiencia" class="nav-link">Experiência</a>
+        <a href="#formacao" class="nav-link">Formação</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+
+      <!-- Botão de menu para mobile -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Menu mobile -->
+    <nav class="nav-mobile" id="mobileMenu">
+      <div class="container">
+        <a href="#inicio" class="nav-link">Início</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#experiencia" class="nav-link">Experiência</a>
+        <a href="#formacao" class="nav-link">Formação</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">Ricardo Martins Santos</h1>
+          <h2 class="hero-subtitle">
+            Técnico em Informática / Desenvolvedor Full Stack
+          </h2>
+          <p class="hero-text">
+            Especialista em manutenção de computadores, suporte técnico e
+            desenvolvimento web, com experiência em montagem de equipamentos e
+            conserto de smartphones e tablets.
+          </p>
+          <div class="hero-buttons">
+            <a href="#contato" class="btn btn-primary">Entre em Contato</a>
+            <a href="#servicos" class="btn btn-outline">Ver Serviços</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="profile-circle"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="section bg-white">
+      <div class="container">
+        <h2 class="section-title">Sobre Mim</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="card-title">Informações Pessoais</h3>
+            <ul class="info-list">
+              <li>
+                <span class="info-label">Nome:</span>
+                <span class="info-value">Ricardo Martin Santos</span>
+              </li>
+              <li>
+                <span class="info-label">Idade:</span>
+                <span class="info-value">41 anos</span>
+              </li>
+              <li>
+                <span class="info-label">Localização:</span>
+                <span class="info-value">Avenida de Santa Cruz 7190, Senador Camará - RJ</span>
+              </li>
+              <li>
+                <span class="info-label">Telefone:</span>
+                <span class="info-value">(21) 97090-2074</span>
+              </li>
+              <li>
+                <span class="info-label">Email:</span>
+                <span class="info-value">tecnicorikardo@gmail.com</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Resumo Profissional</h3>
+            <p class="card-text">
+              Profissional com mais de 5 anos de experiência em suporte
+              técnico e manutenção de computadores, atualmente em formação
+              como Desenvolvedor Full Stack. Possuo habilidades técnicas em
+              montagem e manutenção de equipamentos, conserto de smartphones e
+              tablets, além de experiência em atendimento ao cliente.
+            </p>
+            <p class="card-text">
+              Atualmente trabalho como Maqueiro na Empresa Pública Rio Saúde e
+              como Técnico em Informática freelancer, prestando serviços de
+              manutenção e suporte técnico para diversos clientes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiência Section -->
+    <section id="experiencia" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">Experiência Profissional</h2>
+        <div class="experience-list">
+          <div class="card">
+            <div class="experience-header">
+              <h3 class="experience-title">Maqueiro</h3>
+              <div class="experience-badge">
+                <span class="badge">Atual</span>
+              </div>
+            </div>
+            <h4 class="experience-company">Empresa Pública Rio Saúde</h4>
+            <p class="card-text">
+              Acolhimento e cuidado no transporte de pacientes dentro de uma
+              unidade hospitalar de saúde.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="experience-header">
+              <h3 class="experience-title">Técnico em Informática</h3>
+              <div class="experience-badge">
+                <span class="badge">Atual (Freelance)</span>
+                <span class="experience-duration">5 anos</span>
+              </div>
+            </div>
+            <h4 class="experience-company">Fealromi Informática ltda.</h4>
+            <p class="card-text">
+              Atendimentos como formatação, instalação de peças de
+              computadores, troca de cabo de rede, instalação de ATM, software
+              e hardware (Caixa Eletrônico ITAU). Manutenção de computadores
+              de Caixa da Loja Americanas e gerência, formatação e
+              identificação de possíveis erros de hardware.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="experience-header">
+              <h3 class="experience-title">Técnico em Informática</h3>
+              <div class="experience-badge">
+                <span class="experience-duration">2013 - 2014 (6 meses)</span>
+              </div>
+            </div>
+            <h4 class="experience-company">Outlet Informática Ltda.</h4>
+            <p class="card-text">
+              Trabalhava na produção, montando e fazendo manutenção dos
+              computadores da loja. Além das atividades extras que a gerência
+              solicitava, como limpeza, troca de peça, teste de placa mãe e
+              outros hardwares.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formação Section -->
+    <section id="formacao" class="section bg-white">
+      <div class="container">
+        <h2 class="section-title">Formação e Qualificações</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="card-title">Formação Acadêmica</h3>
+            <div class="education-list">
+              <div class="education-item">
+                <h4 class="education-title">
+                  Análise e Desenvolvimento de Sistemas
+                </h4>
+                <p class="education-institution">Graduação EAD (Cursando)</p>
+              </div>
+              <div class="education-item">
+                <h4 class="education-title">Ensino Médio Completo</h4>
+                <p class="education-institution">Colégio Abrahão Jabour</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Cursos e Certificações</h3>
+            <ul class="courses-list">
+              <li class="course-item">
+                <div class="course-bullet"></div>
+                <div class="course-info">
+                  <p class="course-name">Programador Full Stack</p>
+                  <p class="course-institution">Mate Academy (Cursando)</p>
+                </div>
+              </li>
+              <li class="course-item">
+                <div class="course-bullet"></div>
+                <div class="course-info">
+                  <p class="course-name">
+                    Técnico em Montagem e Manutenção de Micro
+                  </p>
+                  <p class="course-institution">JFW Informática (1 ano)</p>
+                </div>
+              </li>
+              <li class="course-item">
+                <div class="course-bullet"></div>
+                <div class="course-info">
+                  <p class="course-name">
+                    Técnico em Montagem e Manutenção de Micro
+                  </p>
+                  <p class="course-institution">Faetec (3 meses)</p>
+                </div>
+              </li>
+              <li class="course-item">
+                <div class="course-bullet"></div>
+                <div class="course-info">
+                  <p class="course-name">
+                    Técnico de Conserto de Smartphone e Tablet
+                  </p>
+                  <p class="course-institution">48 horas</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">Serviços</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="service-title">Manutenção de Computadores</h3>
+            <p class="service-text">
+              Serviços de formatação, limpeza, troca de peças e solução de
+              problemas de hardware e software.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="service-title">Montagem de Equipamentos</h3>
+            <p class="service-text">
+              Montagem de computadores personalizados de acordo com as
+              necessidades do cliente.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg>
+            </div>
+            <h3 class="service-title">Instalação de Redes</h3>
+            <p class="service-text">
+              Instalação e configuração de redes, troca de cabos e
+              configuração de equipamentos.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="service-title">Conserto de Smartphones</h3>
+            <p class="service-text">
+              Reparo de smartphones, troca de tela, bateria e outros
+              componentes.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="service-title">Suporte Técnico</h3>
+            <p class="service-text">
+              Suporte técnico para empresas e usuários domésticos, resolução
+              de problemas e consultoria.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
+            </div>
+            <h3 class="service-title">Desenvolvimento Web</h3>
+            <p class="service-text">
+              Desenvolvimento de sites e aplicações web para empresas e
+              profissionais.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="section bg-white">
+      <div class="container">
+        <h2 class="section-title">Contato</h2>
+        <ul class="contact-list">
+          <li><strong>Telefone:</strong> (21) 97090-2074</li>
+          <li><strong>Email:</strong> tecnicorikardo@gmail.com</li>
+          <li><strong>Endereço:</strong> Avenida de Santa Cruz 7190, Condomínio Destri, Bloco 22, Apartamento 403, CEP 21830-264, RJ, Senador Camará</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <h3 class="footer-logo">
+            Ricardo<span class="text-primary">Tech</span>
+          </h3>
+          <p class="footer-text">
+            Soluções em informática e desenvolvimento web para empresas e
+            profissionais.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h3 class="footer-title">Links Rápidos</h3>
+          <ul class="footer-nav">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#experiencia">Experiência</a></li>
+            <li><a href="#formacao">Formação</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div id="contato" class="footer-contact">
+          <h3 class="footer-title">Contato</h3>
+          <ul class="footer-contact-list">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <span>(21) 97090-2074</span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>tecnicorikardo@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="currentYear"></span> RicardoTech. Todos os direitos
+          reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Menu mobile toggle
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuToggle.addEventListener("click", function () {
+        mobileMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
+
+      // Fechar menu ao clicar em um link
+      const mobileLinks = document.querySelectorAll(".nav-mobile .nav-link");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          mobileMenu.classList.remove("active");
+          menuToggle.classList.remove("active");
+        });
+      });
+
+      // Ano atual no footer
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    });
+  </script>
+</body>
+
+</html>
