@@ -25,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 110px;
 }
 
 body {
@@ -36,6 +37,7 @@ body {
   color: var(--text);
   font-family: "Inter", sans-serif;
   line-height: 1.7;
+  padding-top: 74px;
 }
 
 a {
@@ -394,6 +396,7 @@ img {
 .content-section {
   position: relative;
   padding: 5.5rem 0;
+  scroll-margin-top: 110px;
 }
 
 .accent-section {
@@ -728,10 +731,6 @@ img {
 }
 
 @media (max-width: 780px) {
-  .site-header {
-    position: static;
-  }
-
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
