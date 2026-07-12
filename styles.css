@@ -47,6 +47,11 @@ a {
   text-decoration: none;
 }
 
+button {
+  font: inherit;
+  color: inherit;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -113,43 +118,63 @@ img {
 }
 
 .site-nav > a,
-.site-nav > .nav-item > a {
+.nav-link-projects,
+.nav-submenu-toggle {
   color: var(--muted);
   font-size: 0.95rem;
   transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .site-nav > a:hover,
-.site-nav > .nav-item > a:hover,
 .site-nav > a.is-active,
-.site-nav > .nav-item > a.is-active {
+.nav-link-projects:hover,
+.nav-link-projects.is-active,
+.nav-item-projects.is-open .nav-link-projects,
+.nav-item-projects.is-open .nav-submenu-toggle {
   color: var(--text);
-  transform: translateY(-1px);
 }
 
 .nav-item {
   position: relative;
 }
 
-.nav-link-with-submenu {
+.nav-projects-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.3rem;
 }
 
-.nav-link-with-submenu i {
+.nav-link-projects {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-submenu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-submenu-toggle i {
   font-size: 0.72rem;
   transition: transform 0.25s ease;
 }
 
-.nav-item-projects:hover .nav-link-with-submenu i,
-.nav-item-projects:focus-within .nav-link-with-submenu i {
+.nav-item-projects.is-open .nav-submenu-toggle i,
+.nav-item-projects:hover .nav-submenu-toggle i,
+.nav-item-projects:focus-within .nav-submenu-toggle i {
   transform: rotate(180deg);
 }
 
 .nav-submenu {
   position: absolute;
-  top: calc(100% + 0.8rem);
+  top: calc(100% + 0.3rem);
   left: 50%;
   min-width: 220px;
   padding: 0.8rem;
@@ -164,6 +189,15 @@ img {
   pointer-events: none;
   transform: translate(-50%, 10px);
   transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-submenu::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -14px;
+  height: 14px;
 }
 
 .nav-submenu a {
@@ -181,6 +215,7 @@ img {
   color: var(--text);
 }
 
+.nav-item-projects.is-open .nav-submenu,
 .nav-item-projects:hover .nav-submenu,
 .nav-item-projects:focus-within .nav-submenu {
   opacity: 1;
@@ -297,7 +332,9 @@ img {
 
 .hero-copy h1,
 .section-heading h2,
-.contact-copy h2 {
+.contact-copy h2,
+.project-copy-block h3,
+.project-certifications h3 {
   font-family: "Montserrat", sans-serif;
   letter-spacing: -0.03em;
   line-height: 1.08;
@@ -371,7 +408,8 @@ img {
 .capability-card,
 .timeline-card,
 .info-card,
-.project-card,
+.project-carousel,
+.project-certifications,
 .contact-panel {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -452,7 +490,8 @@ img {
 
 .profile-stack li,
 .tech-list li,
-.chip {
+.chip,
+.carousel-tab {
   padding: 0.45rem 0.8rem;
   border-radius: 999px;
   border: 1px solid rgba(125, 211, 199, 0.18);
@@ -499,14 +538,14 @@ img {
 .capability-card p,
 .timeline-card p,
 .info-card p,
-.project-content p,
-.contact-copy p {
+.project-copy-block p,
+.contact-copy p,
+.project-certifications p {
   color: var(--muted);
 }
 
 .capability-grid,
-.info-grid,
-.project-grid {
+.info-grid {
   display: grid;
   gap: 1.25rem;
 }
@@ -528,8 +567,7 @@ img {
 
 .capability-card h3,
 .timeline-card h3,
-.info-card h3,
-.project-content h3 {
+.info-card h3 {
   margin-top: 1rem;
   font-size: 1.25rem;
 }
@@ -598,112 +636,84 @@ img {
   color: var(--secondary);
 }
 
-.project-grid {
-  margin-top: 2.4rem;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-}
-
-.project-card {
-  display: grid;
-  grid-template-columns: minmax(240px, 0.9fr) minmax(0, 1.1fr);
-  gap: 1.5rem;
-  padding: 1.5rem;
-  border-radius: var(--radius-lg);
-}
-
-.project-card:last-child {
-  grid-template-columns: 1fr;
-}
-
-.project-visual {
+.project-carousel {
   position: relative;
-  min-height: 320px;
-  border-radius: 22px;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at top right, rgba(125, 211, 199, 0.22), transparent 32%),
-    radial-gradient(circle at bottom left, rgba(143, 23, 57, 0.28), transparent 32%),
-    #10161d;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 2.4rem;
+  padding: 1.5rem;
+  border-radius: 36px;
 }
 
-.project-visual-image {
+.project-slides {
+  position: relative;
+}
+
+.project-slide {
+  display: none;
+  gap: 1.5rem;
+}
+
+.project-slide.is-active {
   display: grid;
-  align-items: center;
+}
+
+.project-media {
+  min-height: min(72vh, 820px);
   padding: 1rem;
+  border-radius: 26px;
+  overflow: hidden;
   background:
     radial-gradient(circle at top, rgba(125, 211, 199, 0.12), transparent 38%),
     linear-gradient(180deg, rgba(22, 29, 36, 0.95) 0%, rgba(11, 15, 19, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.project-visual-image img {
+.project-media img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center;
-  border-radius: 18px;
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.02);
 }
 
-.project-glow {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(125deg, transparent 8%, rgba(255, 255, 255, 0.06) 40%, transparent 72%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+.project-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 1.5rem;
+  align-items: end;
 }
 
-.project-frame {
-  position: absolute;
-  inset: 24px;
+.project-copy-block,
+.project-meta-block {
+  padding: 1.4rem 1.5rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-copy-block h3,
+.project-certifications h3 {
+  margin-top: 0.95rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.project-copy-block p {
+  margin-top: 1rem;
+  max-width: 60ch;
+  font-size: 1.06rem;
+}
+
+.project-meta-block {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  justify-content: center;
-  padding: 1.5rem;
-  border-radius: 18px;
-  background: rgba(8, 12, 15, 0.68);
-  border: 1px solid rgba(125, 211, 199, 0.12);
-}
-
-.code-line {
-  display: block;
-  width: 100%;
-  height: 14px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(125, 211, 199, 0.65), rgba(255, 255, 255, 0.14));
-}
-
-.code-line.short {
-  width: 55%;
-}
-
-.code-line.medium {
-  width: 72%;
-}
-
-.code-line.small {
-  width: 34%;
-}
-
-.code-line.accent {
-  background: linear-gradient(90deg, rgba(143, 23, 57, 0.92), rgba(255, 255, 255, 0.12));
-}
-
-.project-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-
-.project-content.full-width {
-  min-width: 0;
+  justify-content: space-between;
 }
 
 .tech-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: 0.7rem;
   list-style: none;
 }
 
@@ -721,11 +731,69 @@ img {
   color: #b6f3ea;
 }
 
+.carousel-arrow {
+  position: absolute;
+  top: min(36vh, 380px);
+  z-index: 2;
+  width: 56px;
+  height: 56px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  background: rgba(9, 13, 16, 0.84);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  transform: translateY(-2px);
+  background: rgba(17, 25, 30, 0.96);
+  border-color: rgba(125, 211, 199, 0.3);
+}
+
+.carousel-arrow-prev {
+  left: 2rem;
+}
+
+.carousel-arrow-next {
+  right: 2rem;
+}
+
+.carousel-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+}
+
+.carousel-tab {
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.carousel-tab.is-active,
+.carousel-tab:hover {
+  background: rgba(125, 211, 199, 0.12);
+  border-color: rgba(125, 211, 199, 0.38);
+  color: var(--text);
+}
+
+.project-certifications {
+  margin-top: 1.4rem;
+  padding: 1.5rem;
+  border-radius: 28px;
+}
+
+.project-content.full-width {
+  min-width: 0;
+}
+
 .certificate-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
-  margin-top: 0.4rem;
+  margin-top: 1rem;
 }
 
 .certificate-card {
@@ -796,10 +864,10 @@ img {
 @media (max-width: 1100px) {
   .hero-layout,
   .section-grid,
-  .project-grid,
-  .contact-panel,
   .capability-grid,
-  .info-grid {
+  .info-grid,
+  .contact-panel,
+  .project-details {
     grid-template-columns: 1fr;
   }
 
@@ -814,12 +882,16 @@ img {
   .profile-card {
     max-width: none;
   }
+
+  .carousel-arrow {
+    top: min(32vh, 300px);
+  }
 }
 
 @media (max-width: 780px) {
   :root {
-    --header-offset: 120px;
-    --section-offset: 140px;
+    --header-offset: 128px;
+    --section-offset: 144px;
   }
 
   .header-inner {
@@ -839,6 +911,7 @@ img {
     transform: translate(0, 10px);
   }
 
+  .nav-item-projects.is-open .nav-submenu,
   .nav-item-projects:hover .nav-submenu,
   .nav-item-projects:focus-within .nav-submenu {
     transform: translate(0, 0);
@@ -859,8 +932,26 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .project-card {
-    grid-template-columns: 1fr;
+  .project-carousel {
+    padding: 1rem;
+  }
+
+  .project-media {
+    min-height: 54vh;
+  }
+
+  .carousel-arrow {
+    top: 1.8rem;
+    width: 48px;
+    height: 48px;
+  }
+
+  .carousel-arrow-prev {
+    left: 1rem;
+  }
+
+  .carousel-arrow-next {
+    right: 1rem;
   }
 
   .content-section {
@@ -879,8 +970,8 @@ img {
   }
 
   :root {
-    --header-offset: 112px;
-    --section-offset: 132px;
+    --header-offset: 118px;
+    --section-offset: 136px;
   }
 
   .brand {
@@ -900,7 +991,7 @@ img {
     width: 100%;
   }
 
-  .nav-link-with-submenu {
+  .nav-projects-trigger {
     width: 100%;
     justify-content: space-between;
   }
@@ -918,6 +1009,10 @@ img {
     opacity: 1;
     pointer-events: auto;
     transform: none;
+  }
+
+  .nav-submenu::before {
+    display: none;
   }
 
   .nav-submenu a {
@@ -950,7 +1045,32 @@ img {
   .capability-card,
   .timeline-card,
   .info-card,
-  .project-card {
+  .project-carousel,
+  .project-certifications {
     padding: 1.2rem;
+  }
+
+  .project-media {
+    min-height: 42vh;
+    padding: 0.6rem;
+  }
+
+  .project-copy-block,
+  .project-meta-block {
+    padding: 1.1rem;
+  }
+
+  .project-copy-block h3,
+  .project-certifications h3 {
+    font-size: 1.7rem;
+  }
+
+  .carousel-tabs {
+    gap: 0.55rem;
+  }
+
+  .carousel-tab {
+    width: 100%;
+    text-align: center;
   }
 }

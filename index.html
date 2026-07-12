@@ -33,15 +33,23 @@
           <a href="#sobre">Sobre</a>
           <a href="#experiencia">Experiência</a>
           <a href="#formacao">Formação</a>
-          <div class="nav-item nav-item-projects">
-            <a href="#projetos" class="nav-link-with-submenu" aria-haspopup="true">
-              Projetos
-              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-            </a>
-            <div class="nav-submenu" aria-label="Links dos projetos">
-              <a href="#projeto-cardapio">Cardápio Digital</a>
-              <a href="#projeto-bloquinho">Bloquinho Digital</a>
-              <a href="#projeto-agenda">Agenda Médica</a>
+          <div class="nav-item nav-item-projects" data-project-menu>
+            <div class="nav-projects-trigger">
+              <a href="#projetos" class="nav-link-projects">Projetos</a>
+              <button
+                type="button"
+                class="nav-submenu-toggle"
+                aria-label="Abrir lista de projetos"
+                aria-expanded="false"
+                aria-controls="project-submenu"
+              >
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div id="project-submenu" class="nav-submenu" aria-label="Links dos projetos">
+              <a href="#projetos" data-project-target="cardapio">Cardápio Digital</a>
+              <a href="#projetos" data-project-target="bloquinho">Bloquinho Digital</a>
+              <a href="#projetos" data-project-target="agenda">Agenda Médica</a>
             </div>
           </div>
           <a href="#contato">Contato</a>
@@ -291,101 +299,129 @@
             <h2>Projetos e conquistas que mostram evolução técnica e aplicação prática.</h2>
           </div>
 
-          <div class="project-grid">
-            <article id="projeto-cardapio" class="project-card reveal">
-              <div class="project-visual project-visual-image">
-                <img src="img/cardapio-digital.png" alt="Apresentação do projeto Cardápio Digital em desktop, tablet e celular">
-              </div>
-              <div class="project-content">
-                <span class="project-tag">Projeto em destaque</span>
-                <h3>Cardápio Digital</h3>
-                <p>
-                  Sistema de e-commerce para delivery de açaí com personalização de pedidos,
-                  experiência fluida para o cliente e pagamento via PIX.
-                </p>
-                <ul class="tech-list">
-                  <li>React</li>
-                  <li>Firebase</li>
-                  <li>PIX</li>
-                  <li>UX para delivery</li>
-                </ul>
-                <a href="https://cardapiohelogourmet.web.app/" target="_blank" rel="noreferrer" class="text-link">
-                  Acessar projeto <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
-            </article>
+          <div class="project-carousel reveal" data-carousel>
+            <button type="button" class="carousel-arrow carousel-arrow-prev" data-carousel-prev aria-label="Projeto anterior">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
 
-            <article id="projeto-bloquinho" class="project-card reveal">
-              <div class="project-visual project-visual-image">
-                <img src="img/bloquinho-digital.png" alt="Dashboard do sistema Bloquinho Digital">
-              </div>
-              <div class="project-content">
-                <span class="project-tag">Projeto web</span>
-                <h3>Bloquinho Digital</h3>
-                <p>
-                  Gestor de cosméticos para vendedores de Natura, Avon e outras marcas,
-                  criado para facilitar a organização de produtos, o acompanhamento do negócio
-                  e o acesso rápido ao painel da aplicação.
-                </p>
-                <ul class="tech-list">
-                  <li>Dashboard</li>
-                  <li>Gestão de catálogo</li>
-                  <li>Organização de vendas</li>
-                  <li>Web app</li>
-                </ul>
-                <a href="https://bloquinhodigital.web.app/dashboard" target="_blank" rel="noreferrer" class="text-link">
-                  Acessar projeto <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
-            </article>
-
-            <article id="projeto-agenda" class="project-card reveal">
-              <div class="project-visual project-visual-image">
-                <img src="img/agenda-medica.png" alt="Tela de login do sistema Agenda Médica">
-              </div>
-              <div class="project-content">
-                <span class="project-tag">Projeto web</span>
-                <h3>Agenda Médica</h3>
-                <p>
-                  Sistema de agendamento de consultas médicas com acesso seguro ao consultório,
-                  organização da rotina de atendimentos e envio automático de lembretes por e-mail
-                  para reduzir faltas e melhorar a comunicação com os pacientes.
-                </p>
-                <ul class="tech-list">
-                  <li>Agendamento online</li>
-                  <li>Lembretes por e-mail</li>
-                  <li>Painel administrativo</li>
-                  <li>Web app</li>
-                </ul>
-                <a href="https://agendadomedico.site/#/login" target="_blank" rel="noreferrer" class="text-link">
-                  Acessar projeto <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
-            </article>
-
-            <article class="project-card reveal">
-              <div class="project-content full-width">
-                <span class="project-tag">Certificações</span>
-                <h3>Base técnica em evolução</h3>
-                <p>
-                  Certificados que reforçam meu desenvolvimento em fundamentos de programação
-                  e construção de interfaces web.
-                </p>
-
-                <div class="certificate-grid">
-                  <figure class="certificate-card">
-                    <img src="img/jsbasic.png" alt="Certificado JavaScript Basic">
-                    <figcaption>JavaScript Basic</figcaption>
-                  </figure>
-
-                  <figure class="certificate-card">
-                    <img src="img/htmlcssbasic.png" alt="Certificado HTML e CSS">
-                    <figcaption>HTML & CSS</figcaption>
-                  </figure>
+            <div class="project-slides">
+              <article class="project-slide is-active" data-slide="cardapio">
+                <div class="project-media">
+                  <img src="img/cardapio-digital.png" alt="Apresentação do projeto Cardápio Digital em desktop, tablet e celular">
                 </div>
-              </div>
-            </article>
+                <div class="project-details">
+                  <div class="project-copy-block">
+                    <span class="project-tag">Projeto em destaque</span>
+                    <h3>Cardápio Digital</h3>
+                    <p>
+                      Sistema de e-commerce para delivery de açaí com personalização de pedidos,
+                      experiência fluida para o cliente e pagamento via PIX.
+                    </p>
+                  </div>
+                  <div class="project-meta-block">
+                    <ul class="tech-list">
+                      <li>React</li>
+                      <li>Firebase</li>
+                      <li>PIX</li>
+                      <li>UX para delivery</li>
+                    </ul>
+                    <a href="https://cardapiohelogourmet.web.app/" target="_blank" rel="noreferrer" class="text-link">
+                      Acessar projeto <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-slide" data-slide="bloquinho">
+                <div class="project-media">
+                  <img src="img/bloquinho-digital.png" alt="Dashboard do sistema Bloquinho Digital">
+                </div>
+                <div class="project-details">
+                  <div class="project-copy-block">
+                    <span class="project-tag">Projeto web</span>
+                    <h3>Bloquinho Digital</h3>
+                    <p>
+                      Gestor de cosméticos para vendedores de Natura, Avon e outras marcas,
+                      criado para facilitar a organização de produtos, o acompanhamento do negócio
+                      e o acesso rápido ao painel da aplicação.
+                    </p>
+                  </div>
+                  <div class="project-meta-block">
+                    <ul class="tech-list">
+                      <li>Dashboard</li>
+                      <li>Gestão de catálogo</li>
+                      <li>Organização de vendas</li>
+                      <li>Web app</li>
+                    </ul>
+                    <a href="https://bloquinhodigital.web.app/dashboard" target="_blank" rel="noreferrer" class="text-link">
+                      Acessar projeto <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-slide" data-slide="agenda">
+                <div class="project-media">
+                  <img src="img/agenda-medica.png" alt="Tela de login do sistema Agenda Médica">
+                </div>
+                <div class="project-details">
+                  <div class="project-copy-block">
+                    <span class="project-tag">Projeto web</span>
+                    <h3>Agenda Médica</h3>
+                    <p>
+                      Sistema de agendamento de consultas médicas com acesso seguro ao consultório,
+                      organização da rotina de atendimentos e envio automático de lembretes por e-mail
+                      para reduzir faltas e melhorar a comunicação com os pacientes.
+                    </p>
+                  </div>
+                  <div class="project-meta-block">
+                    <ul class="tech-list">
+                      <li>Agendamento online</li>
+                      <li>Lembretes por e-mail</li>
+                      <li>Painel administrativo</li>
+                      <li>Web app</li>
+                    </ul>
+                    <a href="https://agendadomedico.site/#/login" target="_blank" rel="noreferrer" class="text-link">
+                      Acessar projeto <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <button type="button" class="carousel-arrow carousel-arrow-next" data-carousel-next aria-label="Próximo projeto">
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+
+            <div class="carousel-tabs" aria-label="Selecionar projeto">
+              <button type="button" class="carousel-tab is-active" data-slide-target="cardapio">Cardápio Digital</button>
+              <button type="button" class="carousel-tab" data-slide-target="bloquinho">Bloquinho Digital</button>
+              <button type="button" class="carousel-tab" data-slide-target="agenda">Agenda Médica</button>
+            </div>
           </div>
+
+          <article class="project-certifications reveal">
+            <div class="project-content full-width">
+              <span class="project-tag">Certificações</span>
+              <h3>Base técnica em evolução</h3>
+              <p>
+                Certificados que reforçam meu desenvolvimento em fundamentos de programação
+                e construção de interfaces web.
+              </p>
+
+              <div class="certificate-grid">
+                <figure class="certificate-card">
+                  <img src="img/jsbasic.png" alt="Certificado JavaScript Basic">
+                  <figcaption>JavaScript Basic</figcaption>
+                </figure>
+
+                <figure class="certificate-card">
+                  <img src="img/htmlcssbasic.png" alt="Certificado HTML e CSS">
+                  <figcaption>HTML & CSS</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
