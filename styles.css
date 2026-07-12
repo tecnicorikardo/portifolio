@@ -850,6 +850,20 @@ img {
   background: rgba(125, 211, 199, 0.08);
 }
 
+.contact-item-review {
+  border-color: rgba(125, 211, 199, 0.28);
+  background:
+    linear-gradient(135deg, rgba(125, 211, 199, 0.12), rgba(255, 255, 255, 0.03)),
+    rgba(255, 255, 255, 0.02);
+}
+
+.contact-item-review:hover {
+  border-color: rgba(125, 211, 199, 0.5);
+  background:
+    linear-gradient(135deg, rgba(125, 211, 199, 0.18), rgba(255, 255, 255, 0.05)),
+    rgba(255, 255, 255, 0.03);
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
