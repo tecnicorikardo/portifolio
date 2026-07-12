@@ -563,6 +563,20 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.project-visual-image {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at top, rgba(125, 211, 199, 0.16), transparent 42%),
+    linear-gradient(180deg, #edf6f7 0%, #d7e8ea 100%);
+}
+
+.project-visual-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .project-glow {
   position: absolute;
   inset: 0;
