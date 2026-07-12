@@ -33,7 +33,17 @@
           <a href="#sobre">Sobre</a>
           <a href="#experiencia">Experiência</a>
           <a href="#formacao">Formação</a>
-          <a href="#projetos">Projetos</a>
+          <div class="nav-item nav-item-projects">
+            <a href="#projetos" class="nav-link-with-submenu" aria-haspopup="true">
+              Projetos
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="nav-submenu" aria-label="Links dos projetos">
+              <a href="#projeto-cardapio">Cardápio Digital</a>
+              <a href="#projeto-bloquinho">Bloquinho Digital</a>
+              <a href="#projeto-agenda">Agenda Médica</a>
+            </div>
+          </div>
           <a href="#contato">Contato</a>
         </nav>
       </div>
@@ -282,7 +292,7 @@
           </div>
 
           <div class="project-grid">
-            <article class="project-card reveal">
+            <article id="projeto-cardapio" class="project-card reveal">
               <div class="project-visual project-visual-image">
                 <img src="img/cardapio-digital.png" alt="Apresentação do projeto Cardápio Digital em desktop, tablet e celular">
               </div>
@@ -305,9 +315,9 @@
               </div>
             </article>
 
-            <article class="project-card reveal">
+            <article id="projeto-bloquinho" class="project-card reveal">
               <div class="project-visual project-visual-image">
-                <img src="img/bloquinho-digital.png" alt="Tela de login do sistema Bloquinho Digital">
+                <img src="img/bloquinho-digital.png" alt="Dashboard do sistema Bloquinho Digital">
               </div>
               <div class="project-content">
                 <span class="project-tag">Projeto web</span>
@@ -329,7 +339,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal">
+            <article id="projeto-agenda" class="project-card reveal">
               <div class="project-visual project-visual-image">
                 <img src="img/agenda-medica.png" alt="Tela de login do sistema Agenda Médica">
               </div>

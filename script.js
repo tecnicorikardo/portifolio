@@ -1,5 +1,5 @@
 const revealElements = document.querySelectorAll(".reveal");
-const navLinks = document.querySelectorAll(".site-nav a");
+const navLinks = document.querySelectorAll(".site-nav > a, .site-nav > .nav-item > a");
 const sections = [...document.querySelectorAll("main section[id]")];
 
 const revealObserver = new IntersectionObserver(
