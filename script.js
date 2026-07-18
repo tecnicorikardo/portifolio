@@ -1,10 +1,21 @@
 const revealElements = document.querySelectorAll(".reveal");
-const navLinks = document.querySelectorAll(".site-nav > a, .nav-link-projects");
+const navLinks = document.querySelectorAll(".site-nav a");
 const sections = [...document.querySelectorAll("main section[id]")];
 const projectMenu = document.querySelector("[data-project-menu]");
 const projectMenuToggle = document.querySelector(".nav-submenu-toggle");
 const projectMenuLinks = document.querySelectorAll(".nav-submenu a[data-project-target]");
 const carousel = document.querySelector("[data-carousel]");
+
+const normalizePath = (pathname) => {
+  if (!pathname || pathname === "/") {
+    return "/index.html";
+  }
+
+  return pathname.endsWith("/") ? `${pathname}index.html` : pathname;
+};
+
+const currentPath = normalizePath(window.location.pathname);
+const currentHash = window.location.hash;
 
 const revealObserver = new IntersectionObserver(
   (entries, observer) => {
@@ -38,13 +49,30 @@ const setActiveLink = () => {
   });
 
   navLinks.forEach((link) => {
-    const isActive = link.getAttribute("href") === `#${currentSectionId}`;
+    const linkUrl = new URL(link.getAttribute("href"), window.location.href);
+    const linkPath = normalizePath(linkUrl.pathname);
+    const samePage = linkPath === currentPath;
+    const isHashLink = Boolean(linkUrl.hash);
+
+    let isActive = false;
+
+    if (samePage && isHashLink && currentSectionId) {
+      isActive = linkUrl.hash === `#${currentSectionId}`;
+    } else if (samePage && !isHashLink) {
+      isActive = true;
+    } else if (samePage && isHashLink && !sections.length) {
+      isActive = linkUrl.hash === currentHash;
+    }
+
     link.classList.toggle("is-active", isActive);
   });
 };
 
 setActiveLink();
-window.addEventListener("scroll", setActiveLink, { passive: true });
+
+if (sections.length) {
+  window.addEventListener("scroll", setActiveLink, { passive: true });
+}
 
 if (projectMenu && projectMenuToggle) {
   const closeProjectMenu = () => {
@@ -113,6 +141,10 @@ if (carousel) {
       tab.classList.toggle("is-active", isActive);
       tab.setAttribute("aria-pressed", String(isActive));
     });
+
+    if (window.location.hash !== `#${activeName}`) {
+      window.history.replaceState(null, "", `#${activeName}`);
+    }
   };
 
   const restartAutoplay = () => {
@@ -143,8 +175,10 @@ if (carousel) {
     link.addEventListener("click", (event) => {
       const target = link.dataset.projectTarget;
       const slideIndex = slides.findIndex((slide) => slide.dataset.slide === target);
+      const linkUrl = new URL(link.href);
+      const samePage = normalizePath(linkUrl.pathname) === currentPath;
 
-      if (slideIndex < 0 || !section) {
+      if (slideIndex < 0 || !section || !samePage) {
         return;
       }
 
@@ -162,6 +196,12 @@ if (carousel) {
   carousel.addEventListener("mouseleave", () => {
     restartAutoplay();
   });
+
+  const slideFromHash = slides.findIndex((slide) => `#${slide.dataset.slide}` === currentHash);
+
+  if (slideFromHash >= 0) {
+    activeIndex = slideFromHash;
+  }
 
   setSlide(activeIndex);
   restartAutoplay();

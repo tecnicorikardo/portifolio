@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos | Ricardo Martins Santos</title>
+  <meta
+    name="description"
+    content="Projetos desenvolvidos por Ricardo Martins Santos com foco em aplica&ccedil;&otilde;es web, organiza&ccedil;&atilde;o e experi&ecirc;ncia do usu&aacute;rio."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#hero" class="brand">
+          <span class="brand-mark">RM</span>
+          <span class="brand-text">Ricardo Martins Santos</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Navega&ccedil;&atilde;o principal">
+          <a href="index.html#sobre">Sobre</a>
+          <a href="index.html#experiencia">Experi&ecirc;ncia</a>
+          <a href="formacao.html">Forma&ccedil;&atilde;o</a>
+          <div class="nav-item nav-item-projects" data-project-menu>
+            <div class="nav-projects-trigger">
+              <a href="projetos.html" class="nav-link-projects">Projetos</a>
+              <button
+                type="button"
+                class="nav-submenu-toggle"
+                aria-label="Abrir lista de projetos"
+                aria-expanded="false"
+                aria-controls="project-submenu"
+              >
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div id="project-submenu" class="nav-submenu" aria-label="Links dos projetos">
+              <a href="projetos.html#cardapio" data-project-target="cardapio">Card&aacute;pio Digital</a>
+              <a href="projetos.html#bloquinho" data-project-target="bloquinho">Bloquinho Digital</a>
+              <a href="projetos.html#agenda" data-project-target="agenda">Agenda M&eacute;dica</a>
+              <a href="projetos.html#dividas" data-project-target="dividas">Gestor de D&iacute;vidas</a>
+            </div>
+          </div>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="content-section subpage-hero">
+        <div class="container page-intro">
+          <div class="section-heading reveal">
+            <p class="section-kicker">PROJETOS</p>
+            <h1>Uma p&aacute;gina dedicada para mostrar o que j&aacute; foi constru&iacute;do.</h1>
+          </div>
+          <div class="panel reveal">
+            <p>
+              Aqui os projetos ficaram separados da home para deixar a navega&ccedil;&atilde;o mais organizada
+              e facilitar o acesso direto a cada aplica&ccedil;&atilde;o.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projetos" class="content-section accent-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-kicker">PORTF&Oacute;LIO</p>
+            <h2>Projetos e aplica&ccedil;&otilde;es com foco em solu&ccedil;&otilde;es pr&aacute;ticas e boa experi&ecirc;ncia de uso.</h2>
+          </div>
+
+          <div class="project-carousel reveal" data-carousel>
+            <button type="button" class="carousel-arrow carousel-arrow-prev" data-carousel-prev aria-label="Projeto anterior">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+
+            <div class="project-slides">
+              <article class="project-slide is-active" data-slide="cardapio">
+                <div class="project-media">
+                  <img src="img/cardapio-digital.png" alt="Apresenta&ccedil;&atilde;o do projeto Card&aacute;pio Digital em desktop, tablet e celular">
+                </div>
+                <div class="project-details">
+                  <div class="project-copy-block">
+                    <span class="project-tag">Projeto em destaque</span>
+                    <h3>Card&aacute;pio Digital</h3>
+                    <p>
+                      Sistema de e-commerce para delivery de a&ccedil;a&iacute; com personaliza&ccedil;&atilde;o de pedidos,
+                      experi&ecirc;ncia fluida para o cliente e pagamento via PIX.
+                    </p>
+                  </div>
+                  <div class="project-meta-block">
+                    <ul class="tech-list">
+                      <li>React</li>
+                      <li>Firebase</li>
+                      <li>PIX</li>
+                      <li>UX para delivery</li>
+                    </ul>
+                    <a href="https://cardapiohelogourmet.web.app/" target="_blank" rel="noreferrer" class="text-link">
+                      Acessar projeto <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-slide" data-slide="bloquinho">
+                <div class="project-media">
+                  <img src="img/bloquinho-digital.png" alt="Dashboard do sistema Bloquinho Digital">
+                </div>
+                <div class="project-details">
+                  <div class="project-copy-block">
+                    <span class="project-tag">Projeto web</span>
+                    <h3>Bloquinho Digital</h3>
+                    <p>
+                      Gestor de cosm&eacute;ticos para vendedores de Natura, Avon e outras marcas,
+                      criado para facilitar a organiza&ccedil;&atilde;o de produtos, o acompanhamento do neg&oacute;cio
+                      e o acesso r&aacute;pido ao painel da aplica&ccedil;&atilde;o.
+                    </p>
+                  </div>
+                  <div class="project-meta-block">
+                    <ul class="tech-list">
+                      <li>Dashboard</li>
+                      <li>Gest&atilde;o de cat&aacute;logo</li>
+                      <li>Organiza&ccedil;&atilde;o de vendas</li>
+                      <li>Web app</li>
+                    </ul>
+                    <a href="https://bloquinhodigital.web.app/dashboard" target="_blank" rel="noreferrer" class="text-link">
+                      Acessar projeto <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-slide" data-slide="agenda">
+                <div class="project-media">
+                  <img src="img/agenda-medica.png" alt="Tela de login do sistema Agenda M&eacute;dica">
+                </div>
+                <div class="project-details">
+                  <div class="project-copy-block">
+                    <span class="project-tag">Projeto web</span>
+                    <h3>Agenda M&eacute;dica</h3>
+                    <p>
+                      Sistema de agendamento de consultas m&eacute;dicas com acesso seguro ao consult&oacute;rio,
+                      organiza&ccedil;&atilde;o da rotina de atendimentos e envio autom&aacute;tico de lembretes por e-mail
+                      para reduzir faltas e melhorar a comunica&ccedil;&atilde;o com os pacientes.
+                    </p>
+                  </div>
+                  <div class="project-meta-block">
+                    <ul class="tech-list">
+                      <li>Agendamento online</li>
+                      <li>Lembretes por e-mail</li>
+                      <li>Painel administrativo</li>
+                      <li>Web app</li>
+                    </ul>
+                    <a href="https://agendadomedico.site/#/login" target="_blank" rel="noreferrer" class="text-link">
+                      Acessar projeto <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-slide" data-slide="dividas">
+                <div class="project-media">
+                  <img src="img/gestor-dividas.png" alt="Tela inicial do sistema Gestor de D&iacute;vidas">
+                </div>
+                <div class="project-details">
+                  <div class="project-copy-block">
+                    <span class="project-tag">Projeto web</span>
+                    <h3>Gestor de D&iacute;vidas</h3>
+                    <p>
+                      Sistema para controle financeiro pessoal com gest&atilde;o de d&iacute;vidas, receitas e despesas,
+                      pensado para organizar lan&ccedil;amentos, acompanhar a situa&ccedil;&atilde;o financeira e facilitar
+                      a tomada de decis&atilde;o no dia a dia.
+                    </p>
+                  </div>
+                  <div class="project-meta-block">
+                    <ul class="tech-list">
+                      <li>Controle financeiro</li>
+                      <li>Receitas e despesas</li>
+                      <li>Organiza&ccedil;&atilde;o pessoal</li>
+                      <li>Web app</li>
+                    </ul>
+                    <a href="https://gestordedividas.web.app/" target="_blank" rel="noreferrer" class="text-link">
+                      Acessar projeto <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <button type="button" class="carousel-arrow carousel-arrow-next" data-carousel-next aria-label="Pr&oacute;ximo projeto">
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+
+            <div class="carousel-tabs" aria-label="Selecionar projeto">
+              <button type="button" class="carousel-tab is-active" data-slide-target="cardapio">Card&aacute;pio Digital</button>
+              <button type="button" class="carousel-tab" data-slide-target="bloquinho">Bloquinho Digital</button>
+              <button type="button" class="carousel-tab" data-slide-target="agenda">Agenda M&eacute;dica</button>
+              <button type="button" class="carousel-tab" data-slide-target="dividas">Gestor de D&iacute;vidas</button>
+            </div>
+          </div>
+
+          <div class="section-actions reveal">
+            <a href="formacao.html" class="btn btn-secondary">Ver forma&ccedil;&atilde;o</a>
+            <a href="contato.html" class="btn btn-primary">Falar comigo</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

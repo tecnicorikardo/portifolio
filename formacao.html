@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forma&ccedil;&atilde;o | Ricardo Martins Santos</title>
+  <meta
+    name="description"
+    content="Forma&ccedil;&atilde;o, cursos e certifica&ccedil;&otilde;es de Ricardo Martins Santos com foco em tecnologia e desenvolvimento web."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#hero" class="brand">
+          <span class="brand-mark">RM</span>
+          <span class="brand-text">Ricardo Martins Santos</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Navega&ccedil;&atilde;o principal">
+          <a href="index.html#sobre">Sobre</a>
+          <a href="index.html#experiencia">Experi&ecirc;ncia</a>
+          <a href="formacao.html">Forma&ccedil;&atilde;o</a>
+          <div class="nav-item nav-item-projects" data-project-menu>
+            <div class="nav-projects-trigger">
+              <a href="projetos.html" class="nav-link-projects">Projetos</a>
+              <button
+                type="button"
+                class="nav-submenu-toggle"
+                aria-label="Abrir lista de projetos"
+                aria-expanded="false"
+                aria-controls="project-submenu"
+              >
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div id="project-submenu" class="nav-submenu" aria-label="Links dos projetos">
+              <a href="projetos.html#cardapio" data-project-target="cardapio">Card&aacute;pio Digital</a>
+              <a href="projetos.html#bloquinho" data-project-target="bloquinho">Bloquinho Digital</a>
+              <a href="projetos.html#agenda" data-project-target="agenda">Agenda M&eacute;dica</a>
+              <a href="projetos.html#dividas" data-project-target="dividas">Gestor de D&iacute;vidas</a>
+            </div>
+          </div>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="content-section subpage-hero">
+        <div class="container page-intro">
+          <div class="section-heading reveal">
+            <p class="section-kicker">FORMA&Ccedil;&Atilde;O</p>
+            <h1>Estudos, cursos e certifica&ccedil;&otilde;es em uma estrutura mais organizada.</h1>
+          </div>
+          <div class="panel reveal">
+            <p>
+              Esta p&aacute;gina concentra a evolu&ccedil;&atilde;o acad&ecirc;mica e t&eacute;cnica do portf&oacute;lio,
+              separando a forma&ccedil;&atilde;o do restante do conte&uacute;do da home.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="formacao" class="content-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-kicker">ESTUDOS</p>
+            <h2>Forma&ccedil;&atilde;o em constru&ccedil;&atilde;o cont&iacute;nua, com foco em tecnologia e empregabilidade.</h2>
+          </div>
+
+          <div class="info-grid">
+            <article class="info-card reveal">
+              <h3>Habilita&ccedil;&atilde;o T&eacute;cnica de Inform&aacute;tica</h3>
+              <p>Bias Centro Educacional</p>
+              <span class="chip">Cursando</span>
+            </article>
+
+            <article class="info-card reveal">
+              <h3>Curso Excel B&aacute;sico ao Avan&ccedil;ado</h3>
+              <p>Coursera</p>
+              <span class="chip">Cursando</span>
+            </article>
+
+            <article class="info-card reveal">
+              <h3>Suporte Google TI</h3>
+              <p>Coursera - Curso Online</p>
+              <span class="chip">Conclu&iacute;do</span>
+            </article>
+
+            <article class="info-card reveal">
+              <h3>JavaScript B&aacute;sico</h3>
+              <p>Mate Academy</p>
+              <span class="chip">Conclu&iacute;do</span>
+            </article>
+
+            <article class="info-card reveal">
+              <h3>HTML &amp; CSS Intermedi&aacute;rio</h3>
+              <p>Mate Academy</p>
+              <span class="chip">Conclu&iacute;do</span>
+            </article>
+
+            <article class="info-card reveal">
+              <h3>Ensino M&eacute;dio Completo</h3>
+              <p>CE Stuart Edgar Angel Jones</p>
+              <span class="chip">Conclu&iacute;do em 2019</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section accent-section">
+        <div class="container">
+          <article class="project-certifications reveal">
+            <div class="project-content full-width">
+              <span class="project-tag">Certifica&ccedil;&otilde;es</span>
+              <h3>Base t&eacute;cnica em evolu&ccedil;&atilde;o</h3>
+              <p>
+                Certificados que refor&ccedil;am o desenvolvimento em fundamentos de programa&ccedil;&atilde;o
+                e constru&ccedil;&atilde;o de interfaces web.
+              </p>
+
+              <div class="certificate-grid">
+                <figure class="certificate-card">
+                  <img src="img/jsbasic.png" alt="Certificado JavaScript Basic">
+                  <figcaption>JavaScript Basic</figcaption>
+                </figure>
+
+                <figure class="certificate-card">
+                  <img src="img/htmlcssbasic.png" alt="Certificado HTML e CSS">
+                  <figcaption>HTML &amp; CSS</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+
+          <div class="section-actions reveal">
+            <a href="projetos.html" class="btn btn-secondary">Ver projetos</a>
+            <a href="contato.html" class="btn btn-primary">Entrar em contato</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
